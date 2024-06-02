@@ -1,0 +1,106 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background: href();
+    color: white;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 13px;
+}
+
+
+div img{
+    background: rgba(30, 30, 30, 0);
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+#logo {
+    top: 0;
+}
+
+#title {
+    position: absolute;
+    top: 0;
+}
+
+#subtitle {
+    position: absolute;
+    top: 0;
+}
+
+.wipe-in-circle {
+    clip-path: circle(0%);
+    animation: wipe-in-round 1s ease-in-out forwards;
+}
+
+.wipe-in {
+    clip-path: polygon(0 0,0% 0,-200px 100%, 0 100%);
+    animation: wipe-in-left 2s ease-in-out forwards;
+}
+
+
+.pop-in {
+    transform: translateY(-10px);
+    opacity: 0;
+    animation: appear-and-sit 0.5s linear forwards;
+}
+
+.delay-2 {
+    animation-delay: 0.5s;
+}
+
+
+
+.delay-3 {
+    animation-delay: 2s;
+}
+
+@keyframes wipe-in-round {
+    from {
+        clip-path: circle(0%);  /* Start completely clipped */
+    }
+    to {
+        clip-path: circle(100%);  /* Reveal content from left */
+    }
+}
+
+@keyframes wipe-in-left {
+    from {
+        clip-path: polygon(0 0,0% 0,-200px 100%, 0 100%);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0 ,100% 100%,0 100%);
+    }
+}
+
+@keyframes appear-and-sit {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
